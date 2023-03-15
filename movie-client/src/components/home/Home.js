@@ -1,5 +1,7 @@
+import Hero from "../hero/Hero";
+
 function Home({ movies }) {
-  return <div></div>;
+  return <Hero movies={movies} />;
 }
 
 export default Home;

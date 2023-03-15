@@ -1,8 +1,19 @@
 import "./Hero.css";
 import Carousel from "react-material-ui-carousel";
 import { Paper } from "@mui/material";
+import { useGetMovies } from "../../api/hooks";
+import { useState, useEffect } from "react";
 
-function Hero({ movies }) {
+function Hero() {
+  const [movies, setMovies] = useState([]);
+
+  const getMovies = async () =>
+    await useGetMovies().then((data) => setMovies(data));
+
+  useEffect(() => {
+    getMovies();
+  }, []);
+
   return (
     <div className="moview-carousel-container">
       <Carousel>

@@ -1,7 +1,7 @@
 import Hero from "../hero/Hero";
 
-function Home({ movies }) {
-  return <Hero movies={movies} />;
+function Home() {
+  return <Hero />;
 }
 
 export default Home;

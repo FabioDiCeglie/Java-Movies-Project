@@ -22,9 +22,9 @@ function Header() {
             <NavLink className="nav-link" to="/">
               Home
             </NavLink>
-            {/* <NavLink className="nav-link" to="/watchList">
+            <NavLink className="nav-link" to="/watchList">
               Watch List
-            </NavLink> */}
+            </NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>

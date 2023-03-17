@@ -5,6 +5,7 @@ import Header from "./components/header/Header";
 import Home from "./components/home/Home";
 import Trailer from "./components/trailer/Trailer";
 import Reviews from "./components/reviews/Reviews";
+import NotFound from "./components/notFound/NotFound";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/trailer/:ytTrailerId" element={<Trailer />} />
           <Route path="/reviews/:movieId" element={<Reviews />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </div>

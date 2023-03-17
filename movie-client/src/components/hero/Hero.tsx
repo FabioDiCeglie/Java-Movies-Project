@@ -3,13 +3,14 @@ import Carousel from "react-material-ui-carousel";
 import { Paper } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import { useGetMovies } from "../../api/hooks.ts";
-import { useState, useEffect } from "react";
+import { useState, useEffect, DetailedHTMLProps, HTMLAttributes } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCirclePlay } from "@fortawesome/free-solid-svg-icons";
 import { Button } from "react-bootstrap";
+import { Movie } from "../../types/Movie.ts";
 
 const Hero = () => {
-  const [movies, setMovies] = useState([]);
+  const [movies, setMovies] = useState<Movie[]>([]);
   const navigate = useNavigate();
 
   const getMovies = async () =>
@@ -22,13 +23,20 @@ const Hero = () => {
   return (
     <div className="moview-carousel-container">
       <Carousel>
-        {movies.map((movie) => {
+        {movies.map((movie: Movie) => {
           return (
             <Paper key={movie.id}>
               <div className="movie-card-container">
                 <div
                   className="movie-card"
-                  style={{ "--img": `url(${movie.backdrops[0]})` }}
+                  style={
+                    {
+                      "--img": `url(${movie.backdrops[0]})`,
+                    } as DetailedHTMLProps<
+                      HTMLAttributes<HTMLDivElement>,
+                      HTMLDivElement
+                    >
+                  }
                 >
                   <div className="movie-detail">
                     <div className="movie-poster">

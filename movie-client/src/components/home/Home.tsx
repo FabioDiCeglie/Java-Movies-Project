@@ -1,4 +1,4 @@
-import Hero from "../hero/Hero.tsx";
+import Hero from "../hero/Hero";
 
 const Home = () => <Hero />;
 

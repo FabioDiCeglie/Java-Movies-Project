@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState, Fragment, MutableRefObject } from "react";
 import { useParams } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
-import ReviewForm from "../reviewForm/ReviewForm.tsx";
-import { useCreateReview, useGetMovie } from "../../api/hooks.ts";
-import { Movie } from "../../types/Movie.ts";
+import ReviewForm from "../reviewForm/ReviewForm";
+import { useCreateReview, useGetMovie } from "../../api/hooks";
+import { Movie } from "../../types/Movie";
 
 const Reviews = () => {
   const [movie, setMovie] = useState({} as Movie);

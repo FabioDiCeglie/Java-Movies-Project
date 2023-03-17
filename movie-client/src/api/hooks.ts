@@ -1,4 +1,4 @@
-import api from "./axiosConfig.ts";
+import api from "./axiosConfig";
 
 export const useGetMovies = async () => {
   try {

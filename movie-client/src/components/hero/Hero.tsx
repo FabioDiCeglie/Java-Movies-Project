@@ -2,12 +2,12 @@ import "./Hero.css";
 import Carousel from "react-material-ui-carousel";
 import { Paper } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
-import { useGetMovies } from "../../api/hooks.ts";
+import { useGetMovies } from "../../api/hooks";
 import { useState, useEffect, DetailedHTMLProps, HTMLAttributes } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCirclePlay } from "@fortawesome/free-solid-svg-icons";
 import { Button } from "react-bootstrap";
-import { Movie } from "../../types/Movie.ts";
+import { Movie } from "../../types/Movie";
 
 const Hero = () => {
   const [movies, setMovies] = useState<Movie[]>([]);

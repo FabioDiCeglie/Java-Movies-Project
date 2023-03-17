@@ -6,13 +6,12 @@ import ReactPlayer from "react-player";
 function Trailer() {
   let params = useParams();
   const key = params.ytTrailerId;
-  console.log(params);
 
   return (
     <div className="react-player-container">
       {key != null ? (
         <ReactPlayer
-          controls="true"
+          controls={true}
           playing={true}
           url={`https://www.youtube.com/watch?v=${key}`}
           width="100%"

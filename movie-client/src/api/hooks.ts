@@ -1,4 +1,4 @@
-import api from "./axiosConfig";
+import api from "./axiosConfig.ts";
 
 export const useGetMovies = async () => {
   try {
@@ -9,7 +9,7 @@ export const useGetMovies = async () => {
   }
 };
 
-export const useCreateReview = async (review, movieId) => {
+export const useCreateReview = async (review: string, movieId: string) => {
   try {
     const response = await api.post("/api/v1/reviews", {
       reviewBody: review,
@@ -21,7 +21,7 @@ export const useCreateReview = async (review, movieId) => {
   }
 };
 
-export const useGetMovie = async (movieId) => {
+export const useGetMovie = async (movieId: string) => {
   try {
     const response = await api.get(`/api/v1/movies/${movieId}`);
     return response.data;

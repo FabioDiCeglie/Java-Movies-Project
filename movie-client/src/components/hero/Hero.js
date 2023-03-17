@@ -2,7 +2,7 @@ import "./Hero.css";
 import Carousel from "react-material-ui-carousel";
 import { Paper } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
-import { useGetMovies } from "../../api/hooks";
+import { useGetMovies } from "../../api/hooks.ts";
 import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCirclePlay } from "@fortawesome/free-solid-svg-icons";

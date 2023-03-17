@@ -7,20 +7,18 @@ import Trailer from "./components/trailer/Trailer";
 import Reviews from "./components/reviews/Reviews";
 import NotFound from "./components/notFound/NotFound";
 
-function App() {
-  return (
-    <div className="App">
-      <Header />
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/trailer/:ytTrailerId" element={<Trailer />} />
-          <Route path="/reviews/:movieId" element={<Reviews />} />
-          <Route path="*" element={<NotFound />} />
-        </Route>
-      </Routes>
-    </div>
-  );
-}
+const App = () => (
+  <div className="App">
+    <Header />
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route path="/" element={<Home />} />
+        <Route path="/trailer/:ytTrailerId" element={<Trailer />} />
+        <Route path="/reviews/:movieId" element={<Reviews />} />
+        <Route path="*" element={<NotFound />} />
+      </Route>
+    </Routes>
+  </div>
+);
 
 export default App;

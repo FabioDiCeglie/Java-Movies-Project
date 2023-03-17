@@ -3,7 +3,7 @@ import "./Trailer.css";
 import { useParams } from "react-router-dom";
 import ReactPlayer from "react-player";
 
-function Trailer() {
+const Trailer = () => {
   let params = useParams();
   const key = params.ytTrailerId;
 
@@ -20,6 +20,6 @@ function Trailer() {
       ) : null}
     </div>
   );
-}
+};
 
 export default Trailer;

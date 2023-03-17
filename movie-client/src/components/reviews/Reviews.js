@@ -4,7 +4,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import ReviewForm from "../reviewForm/ReviewForm";
 import { useCreateReview, useGetMovie } from "../../api/hooks";
 
-function Reviews() {
+const Reviews = () => {
   const [movie, setMovie] = useState([]);
   const [reviews, setReviews] = useState([]);
 
@@ -87,6 +87,6 @@ function Reviews() {
       </Container>
     </div>
   );
-}
+};
 
 export default Reviews;

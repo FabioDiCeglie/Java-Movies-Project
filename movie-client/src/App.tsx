@@ -1,11 +1,11 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Layout from "./components/Layout.tsx";
-import Header from "./components/header/Header";
-import Home from "./components/home/Home";
+import Header from "./components/header/Header.tsx";
+import Home from "./components/home/Home.tsx";
 import Trailer from "./components/trailer/Trailer.tsx";
 import Reviews from "./components/reviews/Reviews.tsx";
-import NotFound from "./components/notFound/NotFound";
+import NotFound from "./components/notFound/NotFound.tsx";
 
 const App = () => (
   <div className="App">

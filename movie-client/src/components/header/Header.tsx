@@ -1,4 +1,7 @@
-import { faVideoSlash } from "@fortawesome/free-solid-svg-icons";
+import {
+  IconDefinition,
+  faVideoSlash,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
@@ -9,7 +12,7 @@ const Header = () => (
   <Navbar bg="dark" variant="dark" expand="lg">
     <Container fluid>
       <Navbar.Brand href="/" style={{ color: "gold" }}>
-        <FontAwesomeIcon icon={faVideoSlash}>Gold</FontAwesomeIcon>
+        <FontAwesomeIcon icon={faVideoSlash} />
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="navbarScroll" />
       <Navbar.Collapse id="navbarScroll">

@@ -1,14 +1,16 @@
 import "./Hero.css";
 import Carousel from "react-material-ui-carousel";
 import { Paper } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useGetMovies } from "../../api/hooks";
 import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCirclePlay } from "@fortawesome/free-solid-svg-icons";
+import { Button } from "react-bootstrap";
 
 function Hero() {
   const [movies, setMovies] = useState([]);
+  const navigate = useNavigate();
 
   const getMovies = async () =>
     await useGetMovies().then((data) => setMovies(data));
@@ -48,6 +50,13 @@ function Hero() {
                           />
                         </div>
                       </Link>
+                      <div className="movie-review-button-container">
+                        <Button
+                          onClick={() => navigate(`/reviews/${movie.imdbId}`)}
+                        >
+                          Reviews
+                        </Button>
+                      </div>
                     </div>
                   </div>
                 </div>

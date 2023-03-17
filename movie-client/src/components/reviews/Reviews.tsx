@@ -1,35 +1,40 @@
 import { useEffect, useRef, useState, Fragment } from "react";
 import { useParams } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
-import ReviewForm from "../reviewForm/ReviewForm";
+import ReviewForm from "../reviewForm/ReviewForm.js";
 import { useCreateReview, useGetMovie } from "../../api/hooks.ts";
+import { Movie } from "../../types/Movie.ts";
 
 const Reviews = () => {
-  const [movie, setMovie] = useState([]);
-  const [reviews, setReviews] = useState([]);
+  const [movie, setMovie] = useState({} as Movie);
+  const [reviews, setReviews] = useState<{ body: string | undefined }[]>([]);
 
-  const revText = useRef();
+  const revText = useRef<HTMLInputElement>();
   let params = useParams();
   const movieId = params.movieId;
 
-  const getMovieAndReviews = async (movieId) =>
-    await useGetMovie(movieId).then((data) => {
+  const getMovieAndReviews = async (movieId: string | undefined) => {
+    if (!movieId) return `${movieId} is not correct!`;
+
+    return await useGetMovie(movieId).then((data) => {
       setMovie(data);
       setReviews(data.reviewIds);
     });
+  };
 
   useEffect(() => {
     getMovieAndReviews(movieId);
   }, []);
 
-  const addReview = async (e) => {
+  const addReview = async (e: React.FormEvent<HTMLInputElement>) => {
     e.preventDefault();
     const review = revText.current;
 
     try {
-      useCreateReview(review.value, movieId).then(() => {
-        const updateReviews = [...reviews, { body: review.value }];
-        review.value = "";
+      if (!movieId) return `${movieId} is not correct!`;
+      useCreateReview(review?.value as string, movieId).then(() => {
+        const updateReviews = [...reviews, { body: review?.value }];
+        (review as HTMLInputElement).value = "";
         setReviews(updateReviews);
       });
     } catch (error) {

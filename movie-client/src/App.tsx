@@ -4,7 +4,7 @@ import Layout from "./components/Layout.tsx";
 import Header from "./components/header/Header";
 import Home from "./components/home/Home";
 import Trailer from "./components/trailer/Trailer";
-import Reviews from "./components/reviews/Reviews";
+import Reviews from "./components/reviews/Reviews.tsx";
 import NotFound from "./components/notFound/NotFound";
 
 const App = () => (

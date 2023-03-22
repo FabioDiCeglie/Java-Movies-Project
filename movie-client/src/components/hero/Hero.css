@@ -81,9 +81,10 @@
     margin-left: 40%;
   }
   .movie-poster {
-    height: 200px;
+    height: 300px;
     border: 1px solid gold;
     border-radius: 10px;
     overflow: hidden;
+    width: 50%;
   }
 }

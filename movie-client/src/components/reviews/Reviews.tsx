@@ -1,3 +1,4 @@
+import "./Reviews.css";
 import { useEffect, useRef, useState, Fragment, MutableRefObject } from "react";
 import { useParams } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
@@ -52,7 +53,7 @@ const Reviews = () => {
         </Row>
         <Row className="mt-2">
           <Col>
-            <img src={movie?.poster} alt="" />
+            <img className="review-image" src={movie?.poster} alt="" />
           </Col>
           <Col>
             {

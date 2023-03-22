@@ -1,6 +1,6 @@
 import "./Hero.css";
 import Carousel from "react-material-ui-carousel";
-import { Paper } from "@mui/material";
+import { CircularProgress, Paper } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import { useGetMovies } from "../../api/hooks";
 import { useState, useEffect, DetailedHTMLProps, HTMLAttributes } from "react";
@@ -19,6 +19,14 @@ const Hero = () => {
   useEffect(() => {
     getMovies();
   }, []);
+
+  if (movies.length === 0) {
+    return (
+      <div className="loading-bars">
+        <CircularProgress color="inherit" size={80} />
+      </div>
+    );
+  }
 
   return (
     <div className="moview-carousel-container">

@@ -21,4 +21,4 @@ RUN mvn package
 # Copy the JAR file to a new name
 # COPY /target/movies-0.0.1-SNAPSHOT.jar target/movies.jar
 
-CMD ["java", "-jar", "/target/movies-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-jar", "target/movies-0.0.1-SNAPSHOT.jar"]

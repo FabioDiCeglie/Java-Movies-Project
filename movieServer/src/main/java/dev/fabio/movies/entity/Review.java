@@ -1,4 +1,4 @@
-package dev.fabio.movies;
+package dev.fabio.movies.entity;
 
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;

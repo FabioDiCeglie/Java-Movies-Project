@@ -1,4 +1,4 @@
-package dev.fabio.movies;
+package dev.fabio.movies.entity;
 
 import java.util.List;
 
